@@ -4,13 +4,13 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     if (isPdfUrl(url)) {
       try {
         const parsed = new URL(url);
-        // Bỏ qua nếu đã là trang viewer của extension
+        // Skip if it is already the extension's viewer page
         if (parsed.protocol === 'chrome-extension:') {
           return;
         }
 
         const hash = parsed.hash;
-        parsed.hash = ''; // Xóa hash để lấy URL sạch mã hóa
+        parsed.hash = ''; // Remove hash to get a clean URL for encoding
         const basePdfUrl = parsed.toString();
 
         const viewerUrl = chrome.runtime.getURL('pdfjs/web/viewer.html') + 
