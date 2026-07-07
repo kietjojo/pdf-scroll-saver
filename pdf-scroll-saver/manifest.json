@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "PDF Scroll Saver",
+  "version": "1.0.0",
+  "description": "Tự động lưu và khôi phục vị trí đọc cuối cùng khi mở tệp PDF trên Chrome.",
+  "permissions": [
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "pdfjs/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}
