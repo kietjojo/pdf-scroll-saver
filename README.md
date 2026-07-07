@@ -1,22 +1,22 @@
 # PDF Scroll Saver - Chrome Extension
 
-Một tiện ích mở rộng dành cho Google Chrome giúp tự động lưu và khôi phục chính xác vị trí đọc cuối cùng (cuộn trang, số trang, mức thu phóng, góc quay) khi mở tệp PDF trên trình duyệt.
+A Google Chrome extension that automatically remembers and restores your exact reading position (scroll position, page number, zoom level, and rotation) when opening PDF files in Chrome.
 
-## Tính năng chính
-* **Lưu vị trí cuộn tự động**: Tự động ghi nhớ vị trí đọc hiện tại khi bạn đóng tab hoặc trình duyệt.
-* **Hỗ trợ tệp cục bộ và trực tuyến**: Hoạt động mượt mà với cả liên kết PDF trực tuyến (`http://`, `https://`) và tệp PDF cục bộ (`file:///`).
-* **Bảo tồn tỷ lệ zoom và hướng xoay**: Khôi phục chính xác mức thu phóng và hướng trang đã chọn trước đó.
-* **Fingerprint-based**: Nhận dạng tệp PDF dựa trên mã vân tay nội dung (fingerprint) giúp khôi phục đúng vị trí ngay cả khi bạn di chuyển hoặc đổi tên tệp.
+## Key Features
+* **Auto Scroll Saving**: Automatically remembers your exact reading position (down to the pixel) when you close a tab or the browser.
+* **Online & Local PDF Support**: Works with online PDF links (`http://` / `https://`) and local PDF files (`file:///`).
+* **Zoom & Rotation Retention**: Restores your preferred zoom level and page rotation.
+* **Fingerprint-based Tracking**: Identifies PDFs by their content hash (fingerprint), allowing you to rename or move the file without losing your reading progress.
 
-## Công nghệ sử dụng
-* **Manifest V3**: Tuân thủ tiêu chuẩn mới nhất của Chrome Extension API đảm bảo tính bảo mật và hiệu năng.
-* **PDF.js (by Mozilla)**: Tích hợp thư viện hiển thị PDF chuẩn HTML5/Canvas của Mozilla làm nhân xử lý giao diện hiển thị, thay thế cho trình xem PDF mặc định sandboxed của Chrome.
-* **Service Workers**: Xử lý việc bắt bắt sự kiện và điều hướng luồng URL ngầm một cách bất tuần tự mà không gây hao phí tài nguyên bộ nhớ.
-* **HTML5 LocalStorage**: Lưu trữ dữ liệu vị trí cục bộ trên máy tính của người dùng theo cơ chế ánh xạ vân tay tệp, bảo mật 100% không truyền dữ liệu ra ngoài.
+## Tech Stack
+* **Manifest V3**: Built using the latest Chrome Extension API standards for improved security and performance.
+* **PDF.js (by Mozilla)**: Integrated Mozilla's HTML5 PDF rendering engine to bypass Chrome's sandboxed default PDF viewer and allow DOM-level scroll event tracking.
+* **Service Workers**: Handles background tab updates and redirection logic efficiently.
+* **HTML5 LocalStorage**: Saves reading history locally on your device for 100% privacy (no remote data collection).
 
-## Cài đặt phát triển (Unpacked)
-1. Tải mã nguồn dự án về máy tính.
-2. Truy cập `chrome://extensions/` trên trình duyệt Chrome.
-3. Kích hoạt **Developer mode** (Chế độ nhà phát triển) ở góc trên bên phải.
-4. Chọn **Load unpacked** (Tải thư mục đã giải nén) và trỏ tới thư mục chứa dự án này.
-5. Để đọc các file PDF lưu trên ổ đĩa máy tính, nhấp vào **Details** (Chi tiết) của extension này và bật tùy chọn **Allow access to file URLs** (Cho phép truy cập vào các URL của tệp).
+## Local Development Installation (Unpacked)
+1. Download the repository files to your computer.
+2. Open Google Chrome and navigate to `chrome://extensions/`.
+3. Enable **Developer mode** in the top-right corner.
+4. Click **Load unpacked** in the top-left corner and select the directory containing this project.
+5. **Important**: To read local PDF files on your computer, click **Details** on the PDF Scroll Saver card and toggle on **Allow access to file URLs**.
